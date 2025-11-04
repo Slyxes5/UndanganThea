@@ -14,8 +14,7 @@ const EVENT_ISO = "2025-11-07T17:00:00+08:00";
 
 // Guestbook endpoint (Google Apps Script Web App URL)
 // Contoh: const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbx.../exec";
-const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbyKZrFDiW2siJTL5z9BOx5E64XKj1BDTLv4dcfDfRdOMoE0nsrem8yIFRr7ltJ8g2Yy/exec"; // kosong => fallback LocalStorage
-
+const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbzfrVfqCIripa7k0VRP9q3tCJ8myd6eX5CgWzQV9lFjl3woyhzLbxYV_m7bA-payslG/exec" ;
 /* ===== Helpers: Query Param ===== */
 const params = new URLSearchParams(location.search);
 const guest = (params.get('to') || '').trim();
