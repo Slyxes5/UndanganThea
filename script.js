@@ -14,7 +14,7 @@ const EVENT_ISO = "2025-11-07T17:00:00+08:00";
 
 // Guestbook endpoint (Google Apps Script Web App URL)
 // Contoh: const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbx.../exec";
-const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbzfrVfqCIripa7k0VRP9q3tCJ8myd6eX5CgWzQV9lFjl3woyhzLbxYV_m7bA-payslG/exec" ;
+const GUESTBOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbzfrVfqCIripa7k0VRP9q3tCJ8myd6eX5CgWzQV9lFjl3woyhzLbxYV_m7bA-payslG/exec";
 /* ===== Helpers: Query Param ===== */
 const params = new URLSearchParams(location.search);
 const guest = (params.get('to') || '').trim();
@@ -139,15 +139,22 @@ function lsSave(arr){ localStorage.setItem(LS_KEY, JSON.stringify(arr)); }
 function lsInit(){ gbList.innerHTML=''; lsLoad().sort((a,b)=>(a.timestamp||0)-(b.timestamp||0)).forEach(e=>renderOne(e,{prepend:false})); }
 function lsAdd(entry){ const arr=lsLoad(); arr.push(entry); lsSave(arr); renderOne(entry); }
 
-/* Apps Script API */
+/* Apps Script API dengan anti-cache */
 async function apiList(){
-  const res = await fetch(GUESTBOOK_ENDPOINT, { method:'GET' });
-  if(!res.ok) throw new Error('GET failed');
+  const url = `${GUESTBOOK_ENDPOINT}?t=${Date.now()}`;  // anti-cache
+  const res = await fetch(url, { method:'GET', cache:'no-store' });
+  if(!res.ok) throw new Error(`GET failed ${res.status}`);
   return res.json();
 }
 async function apiAdd(entry){
-  const res = await fetch(GUESTBOOK_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(entry) });
-  if(!res.ok) throw new Error('POST failed');
+  const url = `${GUESTBOOK_ENDPOINT}?t=${Date.now()}`;  // anti-cache
+  const res = await fetch(url, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(entry),
+    cache:'no-store'
+  });
+  if(!res.ok) throw new Error(`POST failed ${res.status}`);
   return res.json();
 }
 
@@ -167,12 +174,17 @@ async function apiAdd(entry){
         const from = document.getElementById('gbFrom').value.trim();
         const msg  = document.getElementById('gbMsg').value.trim();
         if(!msg) return;
-        await apiAdd({ name, from, msg });
-        renderOne({ name, from, msg, timestamp: Date.now() }); // render optimistik
-        gbForm.reset();
+        try{
+          await apiAdd({ name, from, msg });
+          renderOne({ name, from, msg, timestamp: Date.now() }); // render optimistik
+          gbForm.reset();
+        }catch(err){
+          console.error('Guestbook POST error:', err);
+          alert('Gagal mengirim ucapan. Coba lagi.');
+        }
       });
     }catch(err){
-      console.warn('Guestbook online gagal, fallback LocalStorage:', err);
+      console.error('Guestbook GET error, fallback LocalStorage:', err);
       lsInit();
       gbForm?.addEventListener('submit',(e)=>{
         e.preventDefault();
