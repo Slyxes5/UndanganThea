@@ -11,10 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- App CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- MUSIC: hidden audio element -->
+  <!-- MUSIC -->
   <audio id="bgAudio" preload="auto" loop>
     <source src="./audio/thea.mp3" type="audio/mpeg" />
   </audio>
@@ -43,13 +44,15 @@
       <div class="countdown" id="countdown"><!-- filled by JS --></div>
 
       <div style="margin-top:22px">
-        <a href="#details" class="btn" id="openInviteBtn" aria-label="View Invitation">Open Invitation
+        <!-- BUTTON (no auto-scroll) -->
+        <button class="btn" id="openInviteBtn" type="button" aria-label="Open invitation">
+          Open Invitation
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </a>
+        </button>
       </div>
 
       <!-- Floating hearts -->
-      <div class="hearts">
+      <div class="hearts" aria-hidden="true">
         <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
       </div>
     </div>
@@ -142,31 +145,32 @@
     </div>
   </section>
 
-  <!-- RSVP -->
-  <section class="section" id="rsvp">
+  <!-- GUESTBOOK / UCAPAN -->
+  <section class="section" id="guestbook">
     <div class="container">
       <div class="card" style="padding:24px">
-        <h2 class="center" style="margin:0 0 16px;font-family: 'Playfair Display', serif;">RSVP</h2>
-        <p class="center muted" style="margin-top:0">Please confirm your presence. We can’t wait to celebrate together!</p>
+        <h2 class="center" style="margin:0 0 16px;font-family:'Playfair Display',serif;">Guestbook — Ucapan</h2>
+        <p class="center muted" style="margin-top:0">Tinggalkan ucapan untuk Vathesya. Ucapan akan muncul langsung di bawah ini.</p>
 
-        <form id="rsvpForm" class="rsvp-grid" autocomplete="on">
+        <form id="gbForm" class="rsvp-grid" autocomplete="on">
           <div>
-            <label>Name</label>
-            <input type="text" id="rsvpName" placeholder="Your name" required />
+            <label for="gbName">Nama</label>
+            <input type="text" id="gbName" placeholder="Nama Anda" required />
           </div>
           <div>
-            <label>Attendees</label>
-            <input type="number" id="rsvpQty" min="1" max="20" value="1" />
+            <label for="gbFrom">Asal/Relasi (opsional)</label>
+            <input type="text" id="gbFrom" placeholder="Keluarga/Teman/Komunitas" />
           </div>
           <div class="full">
-            <label>Message (optional)</label>
-            <textarea id="rsvpMsg" rows="3" placeholder="See you!"></textarea>
+            <label for="gbMsg">Ucapan</label>
+            <textarea id="gbMsg" rows="3" placeholder="Selamat ulang tahun..." required></textarea>
           </div>
           <div class="actions">
-            <button type="submit" class="btn">Send via WhatsApp</button>
-            <a id="addToCalendar" class="btn btn-outline" href="#" download="vathesya-birthday.ics">Add to Calendar</a>
+            <button type="submit" class="btn">Kirim Ucapan</button>
           </div>
         </form>
+
+        <div id="gbList" class="gb-list" aria-live="polite" aria-busy="false"></div>
       </div>
     </div>
   </section>
@@ -177,6 +181,7 @@
     </div>
   </footer>
 
+  <!-- App JS -->
   <script src="./script.js"></script>
 </body>
 </html>
