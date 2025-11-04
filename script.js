@@ -147,16 +147,18 @@ async function apiList(){
   return res.json();
 }
 async function apiAdd(entry){
+  // kirim sebagai text/plain supaya TIDAK ada preflight OPTIONS
   const url = `${GUESTBOOK_ENDPOINT}?t=${Date.now()}`;  // anti-cache
   const res = await fetch(url, {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(entry),
-    cache:'no-store'
+    method: 'POST',
+    // HAPUS headers
+    body: JSON.stringify(entry),
+    cache: 'no-store',
   });
-  if(!res.ok) throw new Error(`POST failed ${res.status}`);
+  if (!res.ok) throw new Error(`POST failed ${res.status}`);
   return res.json();
 }
+
 
 /* Init Guestbook */
 (async function initGuestbook(){
