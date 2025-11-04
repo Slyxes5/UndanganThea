@@ -22,7 +22,7 @@ header.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 
 .hero-inner{display:grid;place-items:center;min-height:82vh;padding:64px 0}
 .badge{display:inline-block;padding:8px 14px;background:var(--pink-100);border:1px solid var(--pink-400);border-radius:999px;font-size:14px}
 .title-script{font-family:"Great Vibes",cursive;font-size:64px;line-height:1;color:var(--text-700);margin:10px 0 6px}
-.title-serif{font-family:"Playfair Display",serif;font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-500)}
+.title-serif{font-family:"Playfair Display",serif;font-size:50px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-500)}
 
 .petal{position:absolute;opacity:.35;filter:blur(.2px)}
 .p1{top:8%;left:8%;width:70px;height:70px;background:radial-gradient(circle at 30% 30%,#ffdce6 0,#f5c6d7 60%,transparent 61%);border-radius:60% 40% 70% 30%/60% 40% 60% 40%;animation:float 10s ease-in-out infinite}
