@@ -142,17 +142,15 @@ openBtn?.addEventListener('click', e=>{
   setTimeout(scrollToDetails, 600);
 });
 
-// ===== Autostart: 1 detik setelah page load =====
-// Biarkan tetap di HERO (tanpa scroll otomatis ke details)
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    tryPlay();               // tetap coba nyalakan musik otomatis
-    // scrollToDetails();    // ❌ dihapus agar tetap di hero
-    // Optional kalau ingin "gerak halus" 1px agar terasa hidup:
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
+/* ===== Autostart: 1 detik setelah page load =====
+   Catatan: sebagian browser mungkin memblokir autoplay bersuara.
+   Kita tetap coba play; kalau tertolak, pointer/klik pertama akan menyalakan musik (sudah diset di atas). */
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{
+    tryPlay();               // coba nyalakan musik otomatis
+    // scrollToDetails();       // auto-scroll ke undangan
   }, 1000);
 });
-
 
 /* Retry kalau tab kembali aktif (mis. iOS Safari) */
 document.addEventListener('visibilitychange', ()=>{
