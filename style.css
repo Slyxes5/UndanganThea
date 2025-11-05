@@ -43,6 +43,88 @@ img{max-width:100%;display:block}
 .cd-box .num{font-size:34px;font-weight:700}
 .cd-box .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-500)}
 
+/* ===== Event Details Elegant ===== */
+.section-title{
+  text-align:center;
+  font-family:"Playfair Display", serif;
+  font-size:clamp(26px,4.2vw,44px);
+  color:var(--text-900);
+  margin:0 0 22px;
+  position:relative;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:84px; height:6px;
+  margin:10px auto 0;
+  border-radius:6px;
+  background:linear-gradient(90deg,#f8bed1,#f4d6df);
+}
+
+.details-grid{
+  display:grid; gap:18px;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .details-grid{ grid-template-columns:1fr; } /* satu kolom seperti contoh */
+}
+
+.detail-card.pill{
+  display:flex; align-items:center; gap:16px;
+  padding:18px 18px;
+  background:#fff;
+  border-radius:18px;
+  border:1px solid rgba(232,200,216,.9);
+  box-shadow:0 6px 20px rgba(139,107,121,.08);
+}
+
+.detail-icon.ic{
+  width:48px; height:48px; flex:none;
+  display:grid; place-items:center;
+  border-radius:50%;
+  font-size:20px;
+  background:radial-gradient(100% 100% at 30% 20%, #ffe6ef 0%, #f4cfe0 55%, #f7eaf1 100%);
+  border:1px solid rgba(232,200,216,.9);
+  color:#7a5f6b;
+}
+
+.detail-label{
+  font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--text-500);
+  margin-bottom:4px;
+}
+
+.detail-value{ font-weight:700; color:var(--text-900); }
+.detail-value.serif{ font-family:"Playfair Display", serif; font-weight:600; }
+
+/* Banner lembut di bawah details */
+.intro-banner.soft{
+  margin-top:18px; text-align:center; padding:26px 20px;
+  border-radius:18px; border:1px solid rgba(232,200,216,.9);
+  background:linear-gradient(120deg, rgba(250,210,224,.55), rgba(255,255,255,.9));
+}
+.intro-heading{
+  margin:0 0 6px; font-family:"Playfair Display", serif;
+  font-size:clamp(18px,2.8vw,26px); color:#2d2d2d;
+}
+.intro-name{
+  font-family:"Great Vibes", cursive;
+  font-size:clamp(26px,5.2vw,40px);
+  color:#e59ab2; margin-bottom:8px;
+}
+.intro-note{
+  margin:0; color:#6b5c63; line-height:1.7;
+}
+
+
+/* --- Curved main photo (arch frame/backdrop) --- */
+.arch-card{position:relative;overflow:hidden;border-radius:22px;aspect-ratio:3/4}
+.arch-bg{position:absolute;inset:0;background:
+  radial-gradient(120% 60% at 50% -12%, rgba(248,201,214,.85) 0%, rgba(248,201,214,0) 62%),
+  linear-gradient(180deg, #fff 0%, #fff 60%, rgba(255,255,255,.92) 100%);
+}
+.arch-img{position:relative;z-index:1;width:92%;height:92%;object-fit:cover;border-radius:26px;margin:6% auto 2%;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+
 .details-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .detail-card{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:16px;background:var(--white);border:1px solid var(--pink-400)}
 .detail-icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--pink-100);border:1px solid var(--pink-400);flex:none}
@@ -91,7 +173,7 @@ footer{padding:26px 0 40px;text-align:center;color:var(--text-500)}
 .ty-love{font-size:14px;color:#bba3ad;margin-bottom:3px}
 .ty-name{font-family:'Great Vibes',cursive;font-size:28px;color:#e59ab2}
 
-/* Floating petals (subtle) */
+/* Floating petals */
 .petal{position:absolute;opacity:.35;filter:blur(.2px)}
 .p1{top:8%;left:8%;width:70px;height:70px;background:radial-gradient(circle at 30% 30%,#ffdce6 0,#f5c6d7 60%,transparent 61%);border-radius:60% 40% 70% 30%/60% 40% 60% 40%;animation:float 10s ease-in-out infinite}
 .p2{top:22%;right:10%;width:85px;height:85px;background:radial-gradient(circle at 30% 30%,#ffe4ed 0,#f0c3d3 60%,transparent 61%);border-radius:50% 60% 40% 60%/60% 50% 60% 50%;animation:float 14s ease-in-out infinite reverse}

@@ -4,13 +4,13 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Birthday Invitation — Vathesya Ester Politon</title>
-  <meta name="description" content="Sweet Seventeen Invitation — 7 Nov 2025 · 17:00 WITA · GMIM Marturia Roong">
+  <meta name="description" content="Sweet Seventeen Invitation — 7 Nov 2025 · 17:00 WITA · Thea’s Home – Jl. Ahmad Yani, Kec. Tondano Barat">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="/photo/main.jpg">
   <meta property="og:title" content="Vathesya Sweet Seventeen Invitation"/>
-  <meta property="og:description" content="Join us to celebrate! 7 Nov 2025 · 17:00 WITA · GMIM Marturia Roong"/>
+  <meta property="og:description" content="Join us to celebrate! 7 Nov 2025 · 17:00 WITA · Thea’s Home – Jl. Ahmad Yani, Kec. Tondano Barat"/>
   <meta property="og:image" content="https://sweetseventeenvathesya.vercel.app/photo/main.jpg"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://sweetseventeenvathesya.vercel.app/"/>
@@ -32,12 +32,9 @@
 
   <!-- HERO -->
   <header class="hero">
-    <!-- petals (bg ornaments) -->
-    <div class="petal p1"></div>
-    <div class="petal p2"></div>
-    <div class="petal p3"></div>
-    <div class="petal p4"></div>
-    <div class="petal p5"></div>
+    <!-- subtle petals -->
+    <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+    <div class="petal p4"></div><div class="petal p5"></div>
 
     <div class="hero-inner container center">
       <span class="badge">You Are Invited</span>
@@ -66,31 +63,70 @@
     </div>
   </section>
 
-  <!-- MAIN PHOTO -->
+  <!-- MAIN PHOTO (single photo with curved frame/backdrop) -->
   <section class="section" id="photo">
     <div class="container">
-      <div class="card" style="overflow:hidden;aspect-ratio:3/4">
-        <img id="mainPhoto" alt="Birthday Portrait"/>
+      <div class="arch-card card">
+        <div class="arch-bg"></div>
+        <img id="mainPhoto" class="arch-img" alt="Birthday Portrait"/>
       </div>
     </div>
   </section>
 
-  <!-- DETAILS -->
-  <section class="section" id="details">
-    <div class="container">
-      <div class="details-grid">
-        <div class="detail-card"><div class="detail-icon">📅</div><div><div class="detail-title">Date</div><div class="detail-value">Friday, 7 November 2025</div></div></div>
-        <div class="detail-card"><div class="detail-icon">⏰</div><div><div class="detail-title">Time</div><div class="detail-value">17:00 WITA — finish</div></div></div>
-        <div class="detail-card"><div class="detail-icon">📍</div><div><div class="detail-title">Venue</div><div class="detail-value">GMIM Marturia Roong, Tomohon</div></div></div>
-        <div class="detail-card"><div class="detail-icon">👗</div><div><div class="detail-title">Dresscode</div><div class="detail-value">Pink & White</div></div></div>
+<!-- DETAILS (elegant) -->
+<section class="section" id="details">
+  <div class="container">
+    <h2 class="section-title">Event Details</h2>
+
+    <div class="details-grid">
+      <div class="detail-card pill">
+        <div class="detail-icon ic">📅</div>
+        <div>
+          <div class="detail-label">Date</div>
+          <div class="detail-value serif">Friday, November 7, 2025</div>
+        </div>
       </div>
-      <div class="center" style="margin-top:14px">
-        <a id="icsBtn" class="btn btn-outline" download="Vathesya_Sweet17.ics">Add to Calendar</a>
+
+      <div class="detail-card pill">
+        <div class="detail-icon ic">⏰</div>
+        <div>
+          <div class="detail-label">Time</div>
+          <div class="detail-value serif">5:00 PM WITA</div>
+        </div>
+      </div>
+
+      <div class="detail-card pill">
+        <div class="detail-icon ic">📍</div>
+        <div>
+          <div class="detail-label">Location</div>
+          <div class="detail-value serif">Thea’s Home – Jl. Ahmad Yani, Kec. Tondano Barat</div>
+        </div>
+      </div>
+
+      <div class="detail-card pill">
+        <div class="detail-icon ic">👗</div>
+        <div>
+          <div class="detail-label">Dress Code</div>
+          <div class="detail-value serif">Pink, White, Cream</div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- MAP (Koordinat rumah) -->
+    <!-- banner lembut -->
+    <div class="intro-banner card soft">
+      <h3 class="intro-heading">Sweet Seventeen Birthday Celebration of</h3>
+      <div class="intro-name">Vathesya Ester Politon</div>
+      <p class="intro-note">It would be an honor and joy for us if you could attend to give your blessings and prayers.</p>
+    </div>
+
+    <div class="center" style="margin-top:16px">
+      <a id="icsBtn" class="btn btn-outline" download="Vathesya_Sweet17.ics">Add to Calendar</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- MAP -->
   <section class="section">
     <div class="container">
       <div class="map-wrap card">
@@ -111,10 +147,10 @@
   <section class="section">
     <div class="container">
       <div class="carousel card">
-        <div class="carousel-track" id="carouselTrack"><!-- slides injected by JS --></div>
+        <div class="carousel-track" id="carouselTrack"></div>
         <button class="carousel-nav prev" id="prevBtn" aria-label="Previous slide">‹</button>
         <button class="carousel-nav next" id="nextBtn" aria-label="Next slide">›</button>
-        <div class="carousel-dots" id="carouselDots"><!-- dots injected by JS --></div>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </section>
