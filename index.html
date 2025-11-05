@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Birthday Invitation — Vathesya Ester Politon</title>
-  <meta name="description" content="Birthday invitation for Vathesya Ester Politon — November 7, 2025, 5:00 PM WITA. Pink Minimalist Elegant." />
-
-  <!-- Google Fonts -->
+  <meta name="description" content="Sweet Seventeen Invitation — 7 Nov 2025 · 17:00 WITA · GMIM Marturia Roong">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- App CSS -->
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="/photo/main.jpg">
+  <meta property="og:title" content="Vathesya Sweet Seventeen Invitation"/>
+  <meta property="og:description" content="Join us to celebrate! 7 Nov 2025 · 17:00 WITA · GMIM Marturia Roong"/>
+  <meta property="og:image" content="https://sweetseventeenvathesya.vercel.app/photo/main.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://sweetseventeenvathesya.vercel.app/"/>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <!-- MUSIC -->
   <audio id="bgAudio" preload="auto" loop>
-    <source src="./audio/thea.mp3" type="audio/mpeg" />
+    <source src="./audio/thea.mp3" type="audio/mpeg"/>
   </audio>
-
-  <!-- MUSIC floating control -->
   <div class="music-ctl">
     <button id="musicBtn" type="button" aria-pressed="false" aria-label="Toggle music">
       <span class="mui">♪</span><span class="lbl">Play music</span>
@@ -30,28 +30,29 @@
   <!-- Confetti canvas -->
   <canvas id="confettiCanvas" aria-hidden="true"></canvas>
 
-  <!-- HERO / COVER -->
+  <!-- HERO -->
   <header class="hero">
+    <!-- petals (bg ornaments) -->
     <div class="petal p1"></div>
     <div class="petal p2"></div>
     <div class="petal p3"></div>
+    <div class="petal p4"></div>
+    <div class="petal p5"></div>
 
     <div class="hero-inner container center">
       <span class="badge">You Are Invited</span>
       <h1 class="title-serif">Sweet Seventeen Birthday Celebration</h1>
       <div class="title-script">Vathesya Ester Politon</div>
 
-      <div class="countdown" id="countdown"><!-- filled by JS --></div>
+      <div class="countdown" id="countdown"></div>
 
       <div style="margin-top:22px">
-        <!-- BUTTON (no auto-scroll) -->
         <button class="btn" id="openInviteBtn" type="button" aria-label="Open invitation">
           Open Invitation
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
 
-      <!-- Floating hearts -->
       <div class="hearts" aria-hidden="true">
         <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
       </div>
@@ -69,7 +70,7 @@
   <section class="section" id="photo">
     <div class="container">
       <div class="card" style="overflow:hidden;aspect-ratio:3/4">
-        <img id="mainPhoto" alt="Birthday Portrait" />
+        <img id="mainPhoto" alt="Birthday Portrait"/>
       </div>
     </div>
   </section>
@@ -78,87 +79,47 @@
   <section class="section" id="details">
     <div class="container">
       <div class="details-grid">
-        <div class="detail-card">
-          <div class="detail-icon">📅</div>
-          <div>
-            <div class="detail-title">Date</div>
-            <div class="detail-value">Friday, 7 November 2025</div>
-          </div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-icon">⏰</div>
-          <div>
-            <div class="detail-title">Time</div>
-            <div class="detail-value">17:00 WITA — finish</div>
-          </div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-icon">📍</div>
-          <div>
-            <div class="detail-title">Venue</div>
-            <div class="detail-value">GMIM Marturia Roong, Tomohon</div>
-          </div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-icon">👗</div>
-          <div>
-            <div class="detail-title">Dresscode</div>
-            <div class="detail-value">Pink & White</div>
-          </div>
-        </div>
+        <div class="detail-card"><div class="detail-icon">📅</div><div><div class="detail-title">Date</div><div class="detail-value">Friday, 7 November 2025</div></div></div>
+        <div class="detail-card"><div class="detail-icon">⏰</div><div><div class="detail-title">Time</div><div class="detail-value">17:00 WITA — finish</div></div></div>
+        <div class="detail-card"><div class="detail-icon">📍</div><div><div class="detail-title">Venue</div><div class="detail-value">GMIM Marturia Roong, Tomohon</div></div></div>
+        <div class="detail-card"><div class="detail-icon">👗</div><div><div class="detail-title">Dresscode</div><div class="detail-value">Pink & White</div></div></div>
+      </div>
+      <div class="center" style="margin-top:14px">
+        <a id="icsBtn" class="btn btn-outline" download="Vathesya_Sweet17.ics">Add to Calendar</a>
       </div>
     </div>
   </section>
 
-  <!-- MAP -->
+  <!-- MAP (Koordinat rumah) -->
   <section class="section">
     <div class="container">
       <div class="map-wrap card">
         <iframe
-  src="https://www.google.com/maps?q=1.295619,124.907806&z=18&output=embed"
-  width="100%"
-  height="450"
-  style="border:0; border-radius: 12px;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-<div style="text-align:center; margin-top: 10px;">
-  <a href="https://maps.app.goo.gl/ze6zjgSvuVXNMBh98" 
-     target="_blank" 
-     style="padding:10px 20px; background:#f8c9d4; color:#333; border-radius:20px; text-decoration:none;">
-    Buka di Google Maps
-  </a>
-</div>
-
-
+          title="Venue Map"
+          src="https://www.google.com/maps?q=1.295619,124.907806&z=18&output=embed"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="center" style="margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-outline" target="_blank" href="https://maps.app.goo.gl/ze6zjgSvuVXNMBh98">Open in Google Maps</a>
+        <a class="btn btn-outline" target="_blank" href="https://wa.me/?text=Datang%20ya%20ke%20Sweet%2017%20Vathesya%20🎉%20https://sweetseventeenvathesya.vercel.app/">Share via WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (dynamic) -->
   <section class="section">
     <div class="container">
       <div class="carousel card">
-        <div class="carousel-track" id="carouselTrack">
-          <img class="slide" alt="Gallery 1" />
-          <img class="slide" alt="Gallery 2" />
-          <img class="slide" alt="Gallery 3" />
-        </div>
-
+        <div class="carousel-track" id="carouselTrack"><!-- slides injected by JS --></div>
         <button class="carousel-nav prev" id="prevBtn" aria-label="Previous slide">‹</button>
         <button class="carousel-nav next" id="nextBtn" aria-label="Next slide">›</button>
-
-        <div class="carousel-dots">
-          <button aria-label="Slide 1"></button>
-          <button aria-label="Slide 2"></button>
-          <button aria-label="Slide 3"></button>
-        </div>
+        <div class="carousel-dots" id="carouselDots"><!-- dots injected by JS --></div>
       </div>
     </div>
   </section>
 
-  <!-- GUESTBOOK / UCAPAN -->
+  <!-- GUESTBOOK -->
   <section class="section" id="guestbook">
     <div class="container">
       <div class="card" style="padding:24px">
@@ -166,6 +127,7 @@
         <p class="center muted" style="margin-top:0">Tinggalkan ucapan untuk Vathesya. Ucapan akan muncul langsung di bawah ini.</p>
 
         <form id="gbForm" class="rsvp-grid" autocomplete="on">
+          <input type="text" id="gbTrap" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
           <div>
             <label for="gbName">Nama</label>
             <input type="text" id="gbName" placeholder="Nama Anda" required />
@@ -188,13 +150,31 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container small">
-      © 2025 – Vathesya Ester Politon · All rights reserved
+  <!-- THANK YOU -->
+  <section class="section thankyou">
+    <div class="container">
+      <div class="thankyou-card fade-up">
+        <div class="thankyou-icon">♡</div>
+        <h2 class="thankyou-title">Thank You</h2>
+        <p class="thankyou-text">
+          With great joy, we hope you can join us to celebrate this special day together.<br>
+          Thank you for your prayers and love.
+        </p>
+        <div class="ty-love">Love,</div>
+        <div class="ty-name">Vathesya Ester Politon &amp; Family</div>
+      </div>
     </div>
+  </section>
+
+  <footer>
+    <div class="container small">© 2025 – Vathesya Ester Politon · All rights reserved</div>
   </footer>
 
-  <!-- App JS -->
-  <script src="./script.js"></script>
+  <!-- LIGHTBOX -->
+  <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;place-items:center;z-index:90">
+    <img id="lightImg" alt="Preview" style="max-width:92vw;max-height:92vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.35)"/>
+  </div>
+
+  <script src="./script.js?v=20251105"></script>
 </body>
 </html>
