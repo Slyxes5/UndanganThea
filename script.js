@@ -2,11 +2,11 @@
    CONFIG
 =========================== */
 // Foto
-const PHOTO_URL = "./photo/main.jpg";
+const PHOTO_URL = "/photo/main.jpg";
 const GALLERY_URLS = [
-  "./photo/1.jpg","./photo/2.jpg","./photo/3.jpg",
-  "./photo/4.jpg","./photo/5.jpg","./photo/6.jpg",
-  "./photo/7.jpg","./photo/8.jpg","./photo/9.jpg"
+  "/photo/1.jpg","/photo/2.jpg","/photo/3.jpg",
+  "/photo/4.jpg","/photo/5.jpg","/photo/6.jpg",
+  "/photo/7.jpg","/photo/8.jpg","/photo/9.jpg"
 ];
 
 // Waktu acara (WITA)
@@ -178,6 +178,16 @@ spawnConfetti(70);
 const faders=document.querySelectorAll('.fade-up');
 const appear=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } }); },{threshold:.2});
 faders.forEach(f=>appear.observe(f));
+/* ===========================
+   RESET DATA LOCAL GUESTBOOK
+   (hapus pesan lama di browser)
+=========================== */
+if (!localStorage.getItem('guestbook_reset_done')) {
+  localStorage.removeItem('guestbook_entries');
+  localStorage.removeItem('guestbook_entries_v2');
+  localStorage.removeItem('gb_last');
+  localStorage.setItem('guestbook_reset_done', 'true');
+}
 
 /* ===========================
    Guestbook (disimpan; logic tetap)
