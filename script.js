@@ -6,8 +6,18 @@
 
 /* ===== CONFIG ===== */
 // Foto utama & galeri (opsional). Kosongkan jika belum siap.
-const PHOTO_URL = ""; // contoh Drive: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
-const GALLERY_URLS = []; // contoh: ['https://...','https://...']
+const PHOTO_URL = "/photo/main.jpg"; // contoh Drive: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+const GALLERY_URLS = [
+  "/photo/1.jpg",
+  "/photo/2.jpg",
+  "/photo/3.jpg",
+  "/photo/4.jpg",
+  "/photo/5.jpg",
+  "/photo/6.jpg",
+  "/photo/7.jpg",
+  "/photo/8.jpg",
+  "/photo/9.jpg",
+]; // contoh: ['https://...','https://...']
 
 // Waktu acara (WITA)
 const EVENT_ISO = "2025-11-07T17:00:00+08:00";
